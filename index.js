@@ -17,6 +17,50 @@ app.get('/v1/explorers', (req, res) => {
     res.status(200).json(explorers)
 })
 
+
+app.get('/v1/explorers/:id', (req, res) => {
+    console.log(`APi explorers GET request ${new Date()}`)
+    console.log(`APi explorers with id: ${req.params.id}`)
+
+    const explorer = {id: 1, name: 'manuel'}
+    res.status(200).json(explorers)
+})
+
+
+app.post('/v1/explorers/', (req, res) => {
+    console.log(`APi explorers GET request ${new Date()}`)
+    const requestBody = req.body
+
+    res.status(201).json({message: 'create'})
+})
+
+
+app.post('/v1/explorers/:id', (req, res) => {
+    console.log(`APi explorers GET request ${new Date()}`)
+    const requestBody = req.body
+
+    res.status(201).json({message: 'create'})
+})
+
+
+app.put('/v1/explorers/:id', (req, res) => {
+    console.log(`APi explorers PUT request ${new Date()}`)
+    console.log(`APi explorers PUT request with id:${id}`)
+    const requestBody = req.body
+
+    res.status(201).json({message: 'update!!'})
+})
+
+
+app.delete('/v1/explorers/:id', (req, res) => {
+    console.log(`APi explorers DELETE request ${new Date()}`)
+    console.log(`APi explorers DELETE request with id:${id}`)
+    const requestBody = req.body
+
+    res.status(201).json({message: 'update!!'})
+})
+
+
 app.listen(port, () =>{
     console.log(`Example app listening on port ${port}`)
 })
